@@ -1,0 +1,12 @@
+net: "/home/jonathanzhang/workspace/models/fpga_vgg16/vgg16_freeze_finetune_trainval_test.prototxt"
+test_iter: 200
+test_interval: 1000
+base_lr: 0.001
+lr_policy: "step"
+gamma: 0.1
+stepsize: 20000
+display: 20
+max_iter: 100000
+momentum: 0.9
+snapshot: 10000  
+snapshot_prefix: "/home/jonathanzhang/workspace/models/fpga_vgg16/finetune_fpga_2/ilsvrc13_det_finetune_fpga_2"
