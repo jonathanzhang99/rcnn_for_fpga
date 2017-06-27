@@ -16,10 +16,10 @@ Closely modeled from the [original RCNN paper](https://github.com/rbgirshick/rcn
 	val1 should be used for training and val2 for validation.
 	(You may need to put your own settings in `create_window_data.py`. Use `-h` flag for help)
 4.	Put your caffemodel into `$WORKSPACE/models/fpga_vgg16`. I used a variant of the VGG16 model with fixed point precision Convolutional Layers.
-5.	Train your network. Make sure that the source parameter of the data layer `vgg16_freeze_finetune_trainval_test.prototxt` points to the correct directory of your window_data file(s). Depending on your GPU, batch size may need to be decreased.
+5.	Train your network. Make sure that the source parameter of the data layer `vgg16_freeze_finetune_trainval_test.prototxt` points to the correct directory of your window_data file(s). Depending on your GPU, batch size may also need to be decreased. Change the `net` and `snapshot` parameter of the `vgg16_freeze_finetune_solver.prototxt` to properly reflect your own working directory.
 	```shell
 	cd $WORKSPACE
-	caffe train solver=./models/fpga_vgg16/vgg16_freeze_finetune_trainval_test.prototxt weights=./models/fpga_vgg15/<YOUR_PRETRAINED_MODEL>.caffemodel --gpu all
+	caffe train solver=./models/fpga_vgg16/vgg16_freeze_finetune_solver.prototxt weights=./models/fpga_vgg15/<YOUR_PRETRAINED_MODEL>.caffemodel --gpu all
 	```
 	Training should take roughly 10-13 hours on GPU. (Tested with GTX 1070 ~3GB Memory)
 6.	Demo your network by running `mydetect.py`. Use `VGG_ILSVRC_16_layers_deploy.prototxt` as the model when demoing. Refer to `mydetect.py -h` for usage.
