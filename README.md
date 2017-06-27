@@ -2,7 +2,7 @@
 
 Region-based Convolutional Neural Network (RCNN) finetuned for an FPGA CNN-accelerated chip. Since the FPGA chips requires a specific convolutional layer, we finetune a VGG-Net pretrained from ImageNet and optimized for the FPGA by freezing all convolutional layers.
 
-Closely modeled from the [original RCNN paper](https://github.com/rbgirshick/rcnn)
+Closely modeled from the [original RCNN paper](https://github.com/rbgirshick/rcnn). <b>NOTE:</b> My version of RCNN has removed the SVM classifier and Bounding Box regressor to better demonstrate the finetuning process at the expense of accuracy.
 
 
 ## Installation and Usage
