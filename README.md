@@ -1,6 +1,6 @@
 # rcnn_for_fpga
 
-Region-based Convolutional Neural Network (RCNN) finetuned for an FPGA CNN-accelerated chip. Since the FPGA dhips requires a specific Convolutional Layer, we take the VGG-Net pretrained off of ImageNet and optimized for the FPGA, freeze all the convolutional layers, and begin training.
+Region-based Convolutional Neural Network (RCNN) finetuned for an FPGA CNN-accelerated chip. Since the FPGA chips requires a specific convolutional layer, we finetune a VGG-Net pretrained from ImageNet and optimized for the FPGA by freezing all convolutional layers.
 
 Closely modeled from the [original RCNN paper](https://github.com/rbgirshick/rcnn)
 
